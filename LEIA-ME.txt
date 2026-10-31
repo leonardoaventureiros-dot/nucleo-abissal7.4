@@ -1,0 +1,19 @@
+COMO PUBLICAR (GitHub + Render)
+
+1) Suba estes arquivos na raiz de um repositório do GitHub:
+   index.html, server.js, package.json, .gitignore
+
+2) No Render: New + > Web Service > conecte o repositório
+   - Runtime: Node
+   - Build Command: npm install
+   - Start Command: npm start
+   - Health Check Path (opcional): /health
+
+3) Quando terminar o deploy, abra a URL do Render (https://SEU-APP.onrender.com).
+   O jogo já abre apontando para o próprio servidor: é só ir em MULTIPLAYER > CRIAR SALA.
+
+Se preferir hospedar o index.html em outro lugar (ex.: GitHub Pages),
+edite no index.html a linha:  const SERVER_URL='';
+e coloque:  const SERVER_URL='wss://SEU-APP.onrender.com';
+
+Obs.: no plano grátis do Render o servidor "dorme" após ~15 min sem uso; o primeiro acesso demora cerca de 1 minuto.
